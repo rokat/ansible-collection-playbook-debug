@@ -1,0 +1,7 @@
+---
+- name: Debug Variable In Playbook Collection
+  hosts: localhost
+  become: false
+  gather_facts: false
+  roles:
+  - variable.override.debug_role

@@ -1,0 +1,36 @@
+# Without Override
+- name: Use Import Playbook
+  import_playbook: variable.override.debug_playbook
+
+- name: Use Import Playbook Invoking playbook
+  import_playbook: variable.override.debug_playbook_role
+
+- name: Use Import Playbook Invoking playbook
+  import_playbook: variable.override.debug_playbook_role
+
+# Group Vars Override
+- name: Use Import Playbook with Variable Override
+  import_playbook: variable.override.debug_playbook
+  vars:
+    collection_var: "{{ group_vars_val }}"
+
+- name: Use Import Playbook with Variable Override
+  import_playbook: variable.override.debug_playbook
+  vars:
+    collection_var: "{{ host_vars_val }}"
+
+- name: Use Import Playbook Invoking role
+  import_playbook: variable.override.debug_playbook_role
+  vars:
+    collection_role_var: "{{ group_vars_val }}"
+
+- name: Use Import Playbook Invoking role
+  import_playbook: variable.override.debug_playbook_role
+  vars:
+    collection_role_var: "{{ host_vars_val }}"
+
+# Vars Coming from Collection To  Override for Role Var
+- name: Use Import Playbook Invoking role
+  import_playbook: variable.override.debug_playbook_role
+  vars:
+    collection_role_var: "{{ collection_var }}"

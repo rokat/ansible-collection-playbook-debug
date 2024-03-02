@@ -1,0 +1,25 @@
+---
+- name: Use Collection Role Directly
+  hosts: localhost
+  gather_facts: false
+  become: false
+  roles:
+    - role: variable.override.debug_role
+
+- name: Use Collection Role Directly with Variable Override
+  hosts: localhost
+  gather_facts: false
+  become: false
+  roles:
+    - role: variable.override.debug_role
+      vars:
+        collection_role_var: "{{ group_vars_val }}"
+
+- name: Use Collection Role Directly with Variable Override
+  hosts: localhost
+  gather_facts: false
+  become: false
+  roles:
+    - role: variable.override.debug_role
+      vars:
+        collection_role_var: "{{ host_vars_val }}"

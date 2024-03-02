@@ -1,0 +1,9 @@
+---
+- name: Debug Variable In Playbook Collection
+  hosts: localhost
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Debug collection_var
+      debug:
+        var: collection_var

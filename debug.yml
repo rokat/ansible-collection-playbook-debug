@@ -1,0 +1,12 @@
+- name: Debug Variable In Normal Playbook
+  hosts: localhost
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Show group_var
+      debug:
+        var: group_vars_val
+
+    - name: Debug host_var
+      debug:
+        var: host_vars_val

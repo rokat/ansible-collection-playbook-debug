@@ -1,0 +1,5 @@
+---
+# tasks file for debug_role
+- name: Debug Collection Role Var
+  debug:
+    var: collection_role_var
