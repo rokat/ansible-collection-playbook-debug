@@ -10,3 +10,7 @@
     - name: Debug host_var
       debug:
         var: host_vars_val
+
+    - name: Debug collection_var
+      debug:
+        var: collection_var
